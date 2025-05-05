@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>FoxtrotDevs – Coming Soon</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       background-color: #000;
@@ -19,17 +18,17 @@
 
     #fox-wrapper {
       text-align: center;
+    }
+
+    pre {
       white-space: pre;
-    }
-
-    .ascii-fox {
       font-size: 18px;
-      line-height: 1.1;
-      display: none;
+      line-height: 1.2;
+      margin: 0;
     }
 
-    .ascii-fox.active {
-      display: block;
+    #fox2 {
+      display: none;
     }
 
     .message {
@@ -40,19 +39,19 @@
 </head>
 <body>
   <div id="fox-wrapper">
-    <pre id="fox1" class="ascii-fox active">
+<pre id="fox1">
  /\_/\
 ( o o )  < Hello, world.
  > ^ <   
 FoxtrotDevs.com
-    </pre>
+</pre>
 
-    <pre id="fox2" class="ascii-fox">
+<pre id="fox2">
  /\_/\
 ( o - )  < Hello, world.
  > ^ <   
 FoxtrotDevs.com
-    </pre>
+</pre>
 
     <div class="message">Coming Soon...</div>
   </div>
@@ -60,8 +59,8 @@ FoxtrotDevs.com
   <script>
     let showingFox1 = true;
     setInterval(() => {
-      document.getElementById('fox1').classList.toggle('active');
-      document.getElementById('fox2').classList.toggle('active');
+      document.getElementById('fox1').style.display = showingFox1 ? 'none' : 'block';
+      document.getElementById('fox2').style.display = showingFox1 ? 'block' : 'none';
       showingFox1 = !showingFox1;
     }, 1000);
   </script>
