@@ -1,0 +1,26 @@
+body {
+  background-color: #000;
+  color: #0f0;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+}
+
+#fox-wrapper {
+  text-align: center;
+}
+
+.ascii-fox {
+  white-space: pre;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 20px;
+}
