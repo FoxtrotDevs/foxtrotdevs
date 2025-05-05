@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foxtrot Devs</title>
-    <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            text-align: center; 
-            margin-top: 50px;
-            background-color: #000; /* Black background */
-            color: #0f0; /* Green text */
-        }
-        .fox { font-size: 24px; margin-top: 20px; }
-        .wink { animation: wink 1s infinite alternate; }
-        @keyframes wink {
-            0% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>FoxtrotDevs – Coming Soon</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to Foxtrot Devs!</h1>
-    <p>This is going to be a great place to start building something awesome.</p>
-    <div class="fox">
-        <span class="wink">^_−</span><span>(o.o)</span>
-    </div>
+  <div id="fox-wrapper">
+    <pre id="fox1" class="ascii-fox">
+        /\_/\
+       ( o o )  < Hello, world.
+        > ^ <   
+       FoxtrotDevs.com
+    </pre>
+
+    <pre id="fox2" class="ascii-fox" style="display: none;">
+        /\_/\
+       ( o - )  < Hello, world.
+        > ^ <   
+       FoxtrotDevs.com
+    </pre>
+
+    <div class="message">Coming Soon...</div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
