@@ -1,26 +1,35 @@
-body {
-  background-color: #000;
-  color: #0f0;
-  font-family: monospace;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  flex-direction: column;
-}
+<style>
+  body {
+    background-color: #000;
+    color: #0f0;
+    font-family: monospace;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-#fox-wrapper {
-  text-align: center;
-}
+  #fox-wrapper {
+    display: inline-block;
+    text-align: left;
+  }
 
-.ascii-fox {
-  white-space: pre;
-  font-size: 18px;
-  line-height: 1.2;
-}
+  pre {
+    font-size: 18px;
+    line-height: 1.2;
+    margin: 0;
+    white-space: pre;
+  }
 
-.message {
-  margin-top: 20px;
-  font-size: 20px;
-}
+  #fox2 {
+    display: none;
+  }
+
+  .message {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #0f0;
+  }
+</style>
