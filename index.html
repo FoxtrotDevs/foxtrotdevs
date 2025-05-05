@@ -16,6 +16,66 @@
       flex-direction: column;
     }
 
+    .glitch-wrapper {
+      white-space: pre;
+      text-align: left;
+      font-size: 12px;
+      position: relative;
+      color: #0f0;
+      margin-bottom: 20px;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      color: #0f0;
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+    }
+
+    .glitch::before {
+      animation: glitchTop 2s infinite linear alternate-reverse;
+      color: #f0f;
+    }
+
+    .glitch::after {
+      animation: glitchBot 1.5s infinite linear alternate-reverse;
+      color: #0ff;
+    }
+
+    @keyframes glitchTop {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      10% { clip: rect(0, 9999px, 12px, 0); transform: translate(-2px, -2px); }
+      20% { clip: rect(0, 9999px, 6px, 0); transform: translate(2px, -1px); }
+      100% { clip: rect(0, 9999px, 0, 0); }
+    }
+
+    @keyframes glitchBot {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      10% { clip: rect(12px, 9999px, 9999px, 0); transform: translate(2px, 2px); }
+      20% { clip: rect(6px, 9999px, 9999px, 0); transform: translate(-2px, 1px); }
+      100% { clip: rect(0, 9999px, 0, 0); }
+    }
+
+    .tagline {
+      color: #0f0;
+      font-size: 14px;
+      margin-top: 1em;
+      animation: flicker 3s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      45% { opacity: 0.8; }
+      55% { opacity: 0.4; }
+      65% { opacity: 0.9; }
+      75% { opacity: 0.3; }
+    }
+
     #fox-wrapper {
       display: inline-block;
       text-align: left;
@@ -37,22 +97,45 @@
 
   <link rel="icon" type="image/png" href="favicon.ico">
 </head>
-  
+
 <body>
+  <!-- GLITCHY ASCII BANNER -->
+  <div class="glitch-wrapper">
+    <div class="glitch" data-text="
+:::::::::: ::::::::  :::    ::: ::::::::::: :::::::::   :::::::: :::::::::::      :::::::::  :::::::::: :::     :::  ::::::::  
+:+:       :+:    :+: :+:    :+:     :+:     :+:    :+: :+:    :+:    :+:          :+:    :+: :+:        :+:     :+: :+:    :+: 
++:+       +:+    +:+  +:+  +:+      +:+     +:+    +:+ +:+    +:+    +:+          +:+    +:+ +:+        +:+     +:+ +:+        
+:#::+::#  +#+    +:+   +#++:+       +#+     +#++:++#:  +#+    +:+    +#+          +#+    +:+ +#++:++#   +#+     +:+ +#++:++#++ 
++#+       +#+    +#+  +#+  +#+      +#+     +#+    +#+ +#+    +#+    +#+          +#+    +#+ +#+         +#+   +#+         +#+ 
+#+#       #+#    #+# #+#    #+#     #+#     #+#    #+# #+#    #+#    #+#          #+#    #+# #+#          #+#+#+#   #+#    #+# 
+###        ########  ###    ###     ###     ###    ###  ########     ###          #########  ##########     ###      ########  
+">
+:::::::::: ::::::::  :::    ::: ::::::::::: :::::::::   :::::::: :::::::::::      :::::::::  :::::::::: :::     :::  ::::::::  
+:+:       :+:    :+: :+:    :+:     :+:     :+:    :+: :+:    :+:    :+:          :+:    :+: :+:        :+:     :+: :+:    :+: 
++:+       +:+    +:+  +:+  +:+      +:+     +:+    +:+ +:+    +:+    +:+          +:+    +:+ +:+        +:+     +:+ +:+        
+:#::+::#  +#+    +:+   +#++:+       +#+     +#++:++#:  +#+    +:+    +#+          +#+    +:+ +#++:++#   +#+     +:+ +#++:++#++ 
++#+       +#+    +#+  +#+  +#+      +#+     +#+    +#+ +#+    +#+    +#+          +#+    +#+ +#+         +#+   +#+         +#+ 
+#+#       #+#    #+# #+#    #+#     #+#     #+#    #+# #+#    #+#    #+#          #+#    #+# #+#          #+#+#+#   #+#    #+# 
+###        ########  ###    ###     ###     ###    ###  ########     ###          #########  ##########     ###      ########  
+    </div>
+    <div class="tagline">Coding the creative.</div>
+  </div>
+
+  <!-- WINKING FOX -->
   <div id="fox-wrapper">
-<pre id="fox1">
+    <pre id="fox1">
  /\_/\
 ( o o )  < Hello, world.
  > ^ <   
 FoxtrotDevs.com
-</pre>
+    </pre>
 
-<pre id="fox2" style="display: none;">
+    <pre id="fox2" style="display: none;">
  /\_/\
 ( o - )  < Hello, world.
  > ^ <   
 FoxtrotDevs.com
-</pre>
+    </pre>
 
     <div class="message">Coming Soon...</div>
   </div>
