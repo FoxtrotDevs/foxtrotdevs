@@ -4,26 +4,66 @@
   <meta charset="UTF-8">
   <title>FoxtrotDevs – Coming Soon</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    #fox-wrapper {
+      text-align: center;
+      white-space: pre;
+    }
+
+    .ascii-fox {
+      font-size: 18px;
+      line-height: 1.1;
+      display: none;
+    }
+
+    .ascii-fox.active {
+      display: block;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  </style>
 </head>
 <body>
   <div id="fox-wrapper">
-    <pre id="fox1" class="ascii-fox">
-        /\_/\
-       ( o o )  < Hello, world.
-        > ^ <   
-       FoxtrotDevs.com
+    <pre id="fox1" class="ascii-fox active">
+ /\_/\
+( o o )  < Hello, world.
+ > ^ <   
+FoxtrotDevs.com
     </pre>
 
-    <pre id="fox2" class="ascii-fox" style="display: none;">
-        /\_/\
-       ( o - )  < Hello, world.
-        > ^ <   
-       FoxtrotDevs.com
+    <pre id="fox2" class="ascii-fox">
+ /\_/\
+( o - )  < Hello, world.
+ > ^ <   
+FoxtrotDevs.com
     </pre>
 
     <div class="message">Coming Soon...</div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    let showingFox1 = true;
+    setInterval(() => {
+      document.getElementById('fox1').classList.toggle('active');
+      document.getElementById('fox2').classList.toggle('active');
+      showingFox1 = !showingFox1;
+    }, 1000);
+  </script>
 </body>
 </html>
