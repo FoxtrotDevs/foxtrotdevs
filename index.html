@@ -84,13 +84,14 @@
       text-align: center;
     }
 
-    pre {
+    .ascii-fox {
       font-size: 16px;
-      line-height: 1.2;
-      margin: 0;
+      font-family: monospace;
       white-space: pre;
-      text-align: center;
-      letter-spacing: 0;
+      line-height: 1.2;
+      text-align: left;
+      display: inline-block;
+      min-width: 7ch;
     }
 
     .message {
@@ -108,7 +109,7 @@
     <div class="glitch" data-text="
 :::::::::: ::::::::  :::    ::: ::::::::::: :::::::::   :::::::: :::::::::::      :::::::::  :::::::::: :::     :::  ::::::::  
 :+:       :+:    :+: :+:    :+:     :+:     :+:    :+: :+:    :+:    :+:          :+:    :+: :+:        :+:     :+: :+:    :+: 
-+:+       +:+    +:+  +:+  +:+      +:+     +:+    +:+ +:+    +:+    +:+          +:+    +:+ +:+        +:+     +:+ +:+       
++:+       +:+    +:+  +:+  +:+      +:+     +:+    +:+ +:+    +:+    +:+          +:+    +:+ +:+        +:+     +:+ +:+        
 :#::+::#  +#+    +:+   +#++:+       +#+     +#++:++#:  +#+    +:+    +#+          +#+    +:+ +#++:++#   +#+     +:+ +#++:++#++ 
 +#+       +#+    +#+  +#+  +#+      +#+     +#+    +#+ +#+    +#+    +#+          +#+    +#+ +#+         +#+   +#+         +#+ 
 #+#       #+#    #+# #+#    #+#     #+#     #+#    #+# #+#    #+#    #+#          #+#    #+# #+#          #+#+#+#   #+#    #+# 
@@ -116,7 +117,7 @@
 ">
 :::::::::: ::::::::  :::    ::: ::::::::::: :::::::::   :::::::: :::::::::::      :::::::::  :::::::::: :::     :::  ::::::::  
 :+:       :+:    :+: :+:    :+:     :+:     :+:    :+: :+:    :+:    :+:          :+:    :+: :+:        :+:     :+: :+:    :+: 
-+:+       +:+    +:+  +:+  +:+      +:+     +:+    +:+ +:+    +:+    +:+          +:+    +:+ +:+        +:+     +:+ +:+       
++:+       +:+    +:+  +:+  +:+      +:+     +:+    +:+ +:+    +:+    +:+          +:+    +:+ +:+        +:+     +:+ +:+        
 :#::+::#  +#+    +:+   +#++:+       +#+     +#++:++#:  +#+    +:+    +#+          +#+    +:+ +#++:++#   +#+     +:+ +#++:++#++ 
 +#+       +#+    +#+  +#+  +#+      +#+     +#+    +#+ +#+    +#+    +#+          +#+    +#+ +#+         +#+   +#+         +#+ 
 #+#       #+#    #+# #+#    #+#     #+#     #+#    #+# #+#    #+#    #+#          #+#    #+# #+#          #+#+#+#   #+#    #+# 
@@ -126,18 +127,17 @@
   </div>
 
   <div id="fox-wrapper">
-<pre id="fox1">
-/\\_/\
+    <div class="ascii-fox" id="fox1">
+/\\_/\\  
 ( o o )  
  > ^ <   
-</pre>
+    </div>
 
-<pre id="fox2" style="display: none;">
-/\\_/\
+    <div class="ascii-fox" id="fox2" style="display: none;">
+/\\_/\\  
 ( o - )  
  > ^ <   
-</pre>
-
+    </div>
 
     <div class="message">Stay awake...</div>
   </div>
@@ -145,8 +145,8 @@
   <script>
     let showingFox1 = true;
     setInterval(() => {
-      document.getElementById('fox1').style.display = showingFox1 ? 'none' : 'block';
-      document.getElementById('fox2').style.display = showingFox1 ? 'block' : 'none';
+      document.getElementById('fox1').style.display = showingFox1 ? 'none' : 'inline-block';
+      document.getElementById('fox2').style.display = showingFox1 ? 'inline-block' : 'none';
       showingFox1 = !showingFox1;
     }, 1000);
   </script>
